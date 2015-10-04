@@ -1,0 +1,28 @@
+﻿<!--
+ Sagi Weisman - 312490030
+ Yasmin Karlin - 308417138
+-->
+@{
+    ViewBag.Title = "EditFan";
+}
+
+<h2>Edit Fan:</h2>
+<form method="POST" action="/FanClub/Update" style="padding:0px;margin:0px;">
+    <input type="hidden" name="id" value="@this.Model.ID" />
+    First name: <input type="text" id="firstName" name="firstName" value="@this.Model.FirstName" /><br />
+    Last name: <input type="text" id="lastName" name="lastname" value="@this.Model.LastName" /><br />
+    @if (this.Model.Gender == true)
+    {
+        <input type="radio" name="gender" value="true" checked style="display:inline-block"><label style="display:inline-block;width:auto">Male</label>
+        <input type="radio" name="gender" value="false" style="display:inline-block"><label style="display:inline-block;width:auto">Female</label><br />
+    }
+    else
+    {
+        <input type="radio" name="gender" value="true" style="display:inline-block"><label style="display:inline-block;width:auto">Male</label>
+        <input type="radio" name="gender" value="false" checked style="display:inline-block"><label style="display:inline-block;width:auto">Female</label><br />
+    }    
+    Birthdate: <input type="date" id="dateOfBirth" name="dateOfBirth" value="@this.Model.BirthDate.Date.ToString("yyyy-MM-dd")" /><br />
+    Years in the club: <input type="number" id="timeInClub" name="timeInClub" value="@this.Model.TimeInClub" /><br />
+    <button type="submit">Submit</button>
+</form>
+

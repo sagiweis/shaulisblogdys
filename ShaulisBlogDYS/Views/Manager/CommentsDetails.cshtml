@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "CommentsDetails";
+}
+
+<h2>Comments Details</h2>
+
+@if (this.Model != null)
+{
+    <ul>
+        @for (int index = 0; index < this.Model.Count; index++)
+    {
+            <li>
+                <h4>@this.Model[index].Title</h4>
+                Author: <a href="@this.Model[index].AuthorSiteUrl">@this.Model[index].Author</a><br />
+                @this.Model[index].CommentText<br />
+                <form method="POST" action="/Manager/DeleteComment" style="padding:0px;margin:0px;display:inline-block">
+                    <input type="hidden" name="id" value="@this.Model[index].ID" />
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+
+    }
+        </ul>
+        }
+        else
+        {
+        <label>There are no comments to this post.</label>
+        }
+

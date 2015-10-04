@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Edit";
+}
+
+<script>
+    function toggleImageUpload() {
+        var elem = document.getElementById("uploadedImageId");
+        elem.disabled = !elem.disabled;
+    }
+
+    function toggleVideoUpload() {
+        var elem = document.getElementById("uploadedVideoId");
+        elem.disabled = !elem.disabled;
+    }
+</script>
+
+<h2>Edit Post</h2>
+
+<form method="POST" action="/Manager/Update" style="padding:0px;margin:0px;" enctype="multipart/form-data">
+    <input type="hidden" name="id" value="@this.Model.ID" />
+    Title: <input type="text" id="title" name="title" value="@this.Model.Title" /><br />
+    Author: <input type="text" id="author" name="author" value="@this.Model.Author" /><br />
+    Author Website: <input type="text" id="siteurl" name="siteurl" value="@this.Model.SiteUrl" /><br />
+    Content: <textarea id="content" name="content">@this.Model.Content</textarea><br />
+    Image: <input type="checkbox" onchange="toggleImageUpload()" />
+    <input type="file" id="uploadedImageId" name="uploadedImage" accept="image/*" disabled><br />
+    Video: <input type="checkbox" onchange="toggleVideoUpload()" />
+    <input type="file" id="uploadedVideoId" name="uploadedVideo" accept="video/*" disabled><br />
+    <button type="submit">Submit</button>
+</form>

@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "AddPost";
+}
+
+<script>
+    function toggleImageUpload() {
+        var elem = document.getElementById("uploadedImageId");
+        elem.disabled = !elem.disabled;
+    }
+
+    function toggleVideoUpload() {
+        var elem = document.getElementById("uploadedVideoId");
+        elem.disabled = !elem.disabled;
+    }
+</script>
+
+<h2>Add New Post:</h2>
+<form method="POST" action="/Manager/Create" style="padding:0px;margin:0px;" enctype="multipart/form-data">
+    Title: <input type="text" id="title" name="title" /><br />
+    Author: <input type="text" id="author" name="author" /><br />
+    Author Website: <input type="text" id="siteurl" name="siteurl" /><br />
+    Content: <textarea id="content" name="content"></textarea><br />
+    Image: <input type="checkbox" onchange="toggleImageUpload()" />
+    <input type="file" id="uploadedImageId" name="uploadedImage" accept="image/*" disabled><br />
+    Video: <input type="checkbox" onchange="toggleVideoUpload()" />
+    <input type="file" id="uploadedVideoId" name="uploadedVideo" accept="video/*" disabled><br />
+    <button type="submit">Submit</button>
+</form>
+    

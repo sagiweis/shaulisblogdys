@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Post Details</h2>
+<div class="blogPost" style="border:1px dashed black; padding:10px; margin:10px">
+    <h3>@this.Model.Title</h3>
+    <small>@this.Model.PostDate</small><br />
+    Author: <a href="@this.Model.SiteUrl">@this.Model.Author</a><br/>
+    @if (this.Model.Comments != null)
+    {
+        <small>@this.Model.Comments.Count comments</small><br /><br />
+    }
+    else
+    {
+        <small>no comments</small><br /><br />
+    }
+        
+    @this.Model.Content<br />
+
+    @if (this.Model.Image != null)
+    {
+        <img src="data:image/png;base64,@Convert.ToBase64String(this.Model.Image)" /><br />
+    }
+
+    @if (this.Model.Video != null)
+    {
+        <video width="320" height="240" controls>
+            <source src="@this.Model.Comments.Video" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    }
+</div>

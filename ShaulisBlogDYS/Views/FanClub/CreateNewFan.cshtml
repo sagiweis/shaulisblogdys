@@ -1,0 +1,18 @@
+﻿<!--
+ Sagi Weisman - 312490030
+ Yasmin Karlin - 308417138
+-->
+@{
+    ViewBag.Title = "CreateNewFan";
+}
+
+<h2>Add New Fan:</h2>
+<form method="POST" action="/FanClub/Create" style="padding:0px;margin:0px;">
+    First name: <input type="text" id="firstName" name="firstName" /><br />
+    Last name: <input type="text" id="lastName" name="lastname" /><br />
+    <input type="radio" name="gender" value="true" checked>Male
+    <input type="radio" name="gender" value="false">Female<br />
+    Birthdate: <input type="date" id="dateOfBirth" name="dateOfBirth" /><br />
+    Years in the club: <input type="number" id="timeInClub" name="timeInClub" /><br />
+    <button type="submit">Submit</button>
+</form>

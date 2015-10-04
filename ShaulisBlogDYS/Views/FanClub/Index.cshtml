@@ -1,0 +1,50 @@
+﻿<!--
+ Sagi Weisman - 312490030
+ Yasmin Karlin - 308417138
+-->
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Fans list:</h2>
+<a href="/FanClub/CreateNewFan">Create new fan</a>
+<table style="width:100%;border:1px solid black">
+    <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Gender</th>
+        <th>Date of birth</th>
+        <th>Years in the club</th>
+        <th>Actions</th>
+    </tr>
+
+    @for (int index = 0; index < this.Model.Length; index++)
+    {
+        <tr>
+            <td><center>@this.Model[index].FirstName</center></td>
+            <td><center>@this.Model[index].LastName</center></td>
+            @if (this.Model[index].Gender == true)
+            {
+                <td><center>Male</center></td>
+            }
+            else
+            {
+                <td><center>Female</center></td>
+            }
+            <td><center>@this.Model[index].BirthDate</center></td>
+            <td><center>@this.Model[index].TimeInClub</center></td>
+            <td>
+                <form method="POST" action="/FanClub/EditFan" style="padding:0px;margin:0px;display:inline-block">
+                    <input type="hidden" name="id" value="@this.Model[index].ID" />
+                    <button type="submit">Edit</button>
+                </form>
+                <form method="POST" action="/FanClub/Delete" style="padding:0px;margin:0px;display:inline-block">
+                    <input type="hidden" name="id" value="@this.Model[index].ID" />
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
+</tr>
+    }
+</table>
+

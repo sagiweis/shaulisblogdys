@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "Index.cshtml";
+}
+
+<script>
+    function verifyDelete() {
+        return confirm('Are you sure you want to delete this post?');
+    }
+</script>
+
+<h2>Posts</h2>
+<table style="width:100%;border:1px solid black">
+    <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Actions</th>
+    </tr>
+    @for (int index = 0; index < this.Model.Length; index++)
+    {
+        <tr>
+            <td>
+                @this.Model[index].Title
+            </td>
+            <td>@this.Model[index].Author</td>
+            <td>
+                <form method="POST" action="/Manager/Delete" onsubmit="return verifyDelete();" style="padding:0px;margin:0px;display:inline-block">
+                    <input type="hidden" name="id" value="@this.Model[index].ID" />
+                    <button type="submit">Delete</button>
+                </form>
+
+                <form method="POST" action="/Manager/Edit" style="padding:0px;margin:0px;display:inline-block">
+                    <input type="hidden" name="id" value="@this.Model[index].ID" />
+                    <button type="submit">Edit</button>
+                </form>
+
+                <form method="POST" action="/Manager/Details" style="padding:0px;margin:0px;display:inline-block">
+                    <input type="hidden" name="id" value="@this.Model[index].ID" />
+                    <button type="submit">Details</button>
+                </form>
+
+                <form method="POST" action="/Manager/CommentsDetails" style="padding:0px;margin:0px;display:inline-block">
+                    <input type="hidden" name="id" value="@this.Model[index].ID" />
+                    <button type="submit">Comments</button>
+                </form>
+            </td>
+        </tr>
+    }
+</table>
+
+<a href="/Manager/AddPost">Add New Post</a>

@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Blog Index</h2>
+@for (int index = 0; index < this.Model.Length; index++)
+{
+    <div class="blogPost" style="border:1px dashed black; padding:10px; margin:10px">
+        <h3>@this.Model[index].Title</h3>
+        <small>@this.Model[index].PostDate</small><br />
+        Author: <a href="@this.Model[index].SiteUrl">@this.Model[index].Author</a><br />
+
+        @this.Model[index].Content<br />
+
+        @if (this.Model[index].Image != null)
+        {
+            <img src="data:image/png;base64,@Convert.ToBase64String(this.Model[index].Image)" /><br />
+        }
+
+        @if (this.Model[index].Video != null)
+        {
+            <video width="320" height="240" controls>
+                <source src="@this.Model[index].Video" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        }
+
+        @if (this.Model[index].Comments != null)
+        {
+            <small>@this.Model[index].Comments.Count comments</small><br /><br />
+            <ul style="padding:10px">
+                @for (int commentIndex = 0; commentIndex < this.Model[index].Comments.Count; commentIndex++)
+                {
+                <li>
+                    <h4>@this.Model[index].Comments[commentIndex].Title</h4>
+                    Author: <a href="@this.Model[index].Comments[commentIndex].AuthorSiteUrl">@this.Model[index].Comments[commentIndex].Author</a><br />
+                    @this.Model[index].Comments[commentIndex].CommentText<br /><br />
+                </li>
+                }
+            </ul>
+        }
+        else
+        {
+            <small>no comments</small><br /><br />
+        }
+        <div style="border:1px solid black">
+            <h3>Add new comment</h3>
+            <form method="POST" action="/Blog/AddComment" style="padding:0px;margin:0px;" enctype="multipart/form-data">
+                <input type="hidden" name="id" value="@this.Model[index].ID" />
+                Title: <input type="text" id="title" name="title" /><br />
+                Author: <input type="text" id="author" name="author" /><br />
+                Author Website: <input type="text" id="siteurl" name="siteurl" /><br />
+                Content: <textarea id="content" name="content"></textarea><br />
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+}
