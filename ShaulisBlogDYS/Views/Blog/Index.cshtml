@@ -2,11 +2,10 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Blog Index</h2>
 @for (int index = 0; index < this.Model.Length; index++)
 {
-    <div class="blogPost" style="border:1px dashed black; padding:10px; margin:10px">
-        <h3>@this.Model[index].Title</h3>
+    <div class="blogPost">
+        <h2>@this.Model[index].Title</h2>
         <small>@this.Model[index].PostDate</small><br />
         Author: <a href="@this.Model[index].SiteUrl">@this.Model[index].Author</a><br />
 
@@ -25,32 +24,36 @@
             </video>
         }
 
-        @if (this.Model[index].Comments != null)
-        {
-            <small>@this.Model[index].Comments.Count comments</small><br /><br />
-            <ul style="padding:10px">
-                @for (int commentIndex = 0; commentIndex < this.Model[index].Comments.Count; commentIndex++)
-                {
-                <li>
-                    <h4>@this.Model[index].Comments[commentIndex].Title</h4>
-                    Author: <a href="@this.Model[index].Comments[commentIndex].AuthorSiteUrl">@this.Model[index].Comments[commentIndex].Author</a><br />
-                    @this.Model[index].Comments[commentIndex].CommentText<br /><br />
-                </li>
-                }
-            </ul>
+        
+            @if (this.Model[index].Comments != null)
+            {
+                <small>@this.Model[index].Comments.Count comments</small><br />
+                <div class="commentsSection">
+                    <ul style="padding:10px">
+                        @for (int commentIndex = 0; commentIndex < this.Model[index].Comments.Count; commentIndex++)
+                                {
+                            <li>
+                                <h4>@this.Model[index].Comments[commentIndex].Title</h4>
+                                Author: <a href="@this.Model[index].Comments[commentIndex].AuthorSiteUrl">@this.Model[index].Comments[commentIndex].Author</a><br />
+                                @this.Model[index].Comments[commentIndex].CommentText<br /><br />
+                            </li>
+                            <hr/><br />
+                                }
+                    </ul>
+                </div>
         }
         else
         {
-            <small>no comments</small><br /><br />
+        <small>no comments</small><br /><br />
         }
-        <div style="border:1px solid black">
-            <h3>Add new comment</h3>
-            <form method="POST" action="/Blog/AddComment" style="padding:0px;margin:0px;" enctype="multipart/form-data">
+        <div class="newComment">
+            <h4>Add new comment</h4>
+            <form method="POST" action="/Blog/AddComment" style="padding:0px;margin:0px;border:0px" enctype="multipart/form-data">
                 <input type="hidden" name="id" value="@this.Model[index].ID" />
-                Title: <input type="text" id="title" name="title" /><br />
-                Author: <input type="text" id="author" name="author" /><br />
-                Author Website: <input type="text" id="siteurl" name="siteurl" /><br />
-                Content: <textarea id="content" name="content"></textarea><br />
+                <label>Title: </label><input type="text" id="title" name="title" /><br />
+                <label>Author: </label><input type="text" id="author" name="author" /><br />
+                <label>Author Website: </label><input type="text" id="siteurl" name="siteurl" /><br />
+                <label style="vertical-align:top">Content: </label><textarea id="content" name="content" style="margin-top:0px; display:inline-block; height:40px;"></textarea><br />
                 <button type="submit">Submit</button>
             </form>
         </div>

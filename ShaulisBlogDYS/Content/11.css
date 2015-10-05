@@ -31,7 +31,7 @@ body {
 	padding: 22px 0;
 	width: 940px;
 	font: 13px/22px Helvetica, Arial, sans-serif;
-	background: #F0F0F0;
+	background: #E9EAED;   
 }
 
 h1, h2 {
@@ -226,26 +226,26 @@ aside section {
 /*------------------------------
 =BLOG POST
 ------------------------------*/
+
+.blogPost{
+    padding:10px; 
+    margin:10px;
+    border:1px solid lightgray;
+    font-family: Arial;
+    background-color:white;
+    box-shadow: 3px 3px darkgray;
+}
+
 .blogPost header p, .blogPost header p a {
 		font-size: 14px;
 		font-style: italic;
-		color: #777;
+		color: #777;        
 	}
 	
 		.blogPost header p a:hover {
 			text-decoration: none;
 			color: #000;
 		}
-
-.blogPost div {
-	/* Column-count not implemented yet */
-	-moz-column-count: 2;
-	-webkit-column-count: 2;
-	
-	/* Column-gap not implemented yet */
-	-moz-column-gap: 22px;
-	-webkit-column-gap: 22px;
-}
 
 .blogPost img {
 	margin: 22px 0;
@@ -262,6 +262,22 @@ aside section {
 /*------------------------------
 =COMMENTS
 ------------------------------*/
+
+.newComment{
+    margin:10px;
+    background-color:#E9EAED;
+    border:1px solid lightgray;
+    padding:10px;
+    font-family:Arial;
+}
+
+.commentsSection{
+    margin:10px;
+    background-color:#E9EAED;
+    border:1px solid lightgray;
+    padding:10px;
+    font-family:Arial;
+}
 
 #comments {
 	margin-top: 21px;
@@ -321,14 +337,14 @@ form {
 		padding: 0 22px;
 	}
 
-		form label {
+		/*form label {
 			display: table-cell;
 			width: 140px;
 			padding-right: 20px;
 			text-align: right;
 			font-weight: bold;
 			vertical-align: top;
-		}
+		}*/
 	
 		form input[type="text"], form input[type="email"], form input[type="url"] {
 			display: table-cell;
