@@ -45,6 +45,16 @@ namespace ShaulisBlogDYS.Controllers
             }
         }
 
+        [HttpPost]
+        public ActionResult AdvancedFanSearch(string firstName, string lastName, DateTime birthDate)
+        {
+            using (BlogDBContext context = new BlogDBContext())
+            {
+                List<Fan> fans = context.Fans.Where(u => u.FirstName == firstName && u.LastName == lastName && u.BirthDate.CompareTo(birthDate) == 0).ToList<Fan>();
+                return View("FanSearchResult", fans);
+            }
+        }
+
         public ActionResult CreateNewFan()
         {
             return View();

@@ -8,12 +8,12 @@
 <div style="border:1px solid darkgray; border-radius:10px;padding:10px">
     <h3>New Fan</h3>
     <form method="POST" action="/FanClub/Create" style="padding:0px;margin:0px;">
-        First name: <input type="text" id="firstName" name="firstName" /><br />
-        Last name: <input type="text" id="lastName" name="lastname" /><br />
+        First name: <input class="form-control" style="width:200px" type="text" id="firstName" name="firstName" /><br />
+        Last name: <input class="form-control" style="width:200px" type="text" id="lastName" name="lastname" /><br />
         <input type="radio" name="gender" value="true" checked>Male
         <input type="radio" name="gender" value="false">Female<br />
         Birthdate: <input type="date" id="dateOfBirth" name="dateOfBirth" /><br />
         Years in the club: <input type="number" id="timeInClub" name="timeInClub" /><br />
-        <button type="submit">Submit</button>
+        <button class="btn btn-success" type="submit">Submit</button>
     </form>
 </div>

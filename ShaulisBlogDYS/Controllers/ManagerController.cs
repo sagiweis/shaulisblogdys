@@ -152,6 +152,11 @@ namespace ShaulisBlogDYS.Controllers
             using (BlogDBContext context = new BlogDBContext())
             {
                 List<Post> posts = context.Posts.Where(u => u.Author == authorNameSearchPost).ToList<Post>();
+                for (var i = 0; i < posts.Count; i++)
+                {
+                    Post current = posts[i];
+                    current.Comments = context.Comments.Where(u => u.PostID == current.ID).ToList<Comment>();
+                }
                 return View("PostSearchResult", posts);
             }
         }
@@ -162,6 +167,11 @@ namespace ShaulisBlogDYS.Controllers
             using (BlogDBContext context = new BlogDBContext())
             {
                 List<Post> posts = context.Posts.Where(u => u.PostDate.CompareTo(fromDateSearchPost) >= 0 && u.PostDate.CompareTo(toDateSearchPost) <= 0).ToList<Post>();
+                for (var i = 0; i < posts.Count; i++)
+                {
+                    Post current = posts[i];
+                    current.Comments = context.Comments.Where(u => u.PostID == current.ID).ToList<Comment>();
+                }
                 return View("PostSearchResult",posts);
             }
         }

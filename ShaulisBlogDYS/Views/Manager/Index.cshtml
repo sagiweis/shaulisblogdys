@@ -28,19 +28,19 @@
                     <td style="text-align:center">
                         <form method="POST" action="/Manager/Details" style="padding:0px;margin:0px;display:inline-block">
                             <input type="hidden" name="id" value="@this.Model[index].ID" />
-                            <button type="submit">Details</button>
+                            <button class="btn btn-primary" type="submit">Details</button>
                         </form>
                         <form method="POST" action="/Manager/CommentsDetails" style="padding:0px;margin:0px;display:inline-block">
                             <input type="hidden" name="id" value="@this.Model[index].ID" />
-                            <button type="submit">Comments</button>
+                            <button class="btn btn-primary" type="submit">Comments</button>
                         </form>
                         <form method="POST" action="/Manager/Edit" style="padding:0px;margin:0px;display:inline-block">
                             <input type="hidden" name="id" value="@this.Model[index].ID" />
-                            <button type="submit">Edit</button>
+                            <button class="btn btn-primary" type="submit">Edit</button>
                         </form>
                         <form method="POST" action="/Manager/Delete" onsubmit="return verifyDelete();" style="padding:0px;margin:0px;display:inline-block">
                             <input type="hidden" name="id" value="@this.Model[index].ID" />
-                            <button type="submit">Delete</button>
+                            <button class="btn btn-danger" type="submit">Delete</button>
                         </form>
                     </td>
                 </tr>
@@ -48,29 +48,31 @@
         </table>
         <h3>Search Posts</h3>
         <form method="POST" action="/Manager/SearchPostByAuthor" style="padding:0px;margin:0px;display:inline-block">
-            <label> Find posts by author name: </label><input type="text" id="authorNameSearchPost" name="authorNameSearchPost" />
-            <button type="submit">Search</button>
-        </form>
+            <label> Find posts by author name: </label><input class="form-control" style="width:200px" type="text" id="authorNameSearchPost" name="authorNameSearchPost" />
+            <button class="btn btn-success" type="submit">Search</button>
+        </form><br />
+        <label>-OR-</label><br />
         <form method="POST" action="/Manager/SearchPostByDate" style="padding:0px;margin:0px;display:inline-block">
             <label> Find posts by dates: from </label>
             <input type="date" id="fromDateSearchPost" name="fromDateSearchPost" />
             <label> to </label>
             <input type="date" id="toDateSearchPost" name="toDateSearchPost" />
             <label> (not included) </label>
-            <button type="submit">Search</button>
+            <button class="btn btn-success" type="submit">Search</button>
         </form>
     </div>
 
     <div style="border:1px solid darkgray; border-radius:10px; padding:10px; margin-top:10px;">
         <h3>Search Comments</h3>
         <form method="POST" action="/Manager/SearchCommentsByAuthor" style="padding:0px;margin:0px;display:inline-block">
-            <label> Find comments by author name: </label><input type="text" id="authorNameSearchComment" name="authorNameSearchComment" />
-            <button type="submit">Search</button>
-        </form>
+            <label>By author name: </label><input class="form-control" style="width:200px" type="text" id="authorNameSearchComment" name="authorNameSearchComment" />
+            <button class="btn btn-success" type="submit">Search</button>
+        </form><br />
+        <label>-OR-</label><br />
         <form method="POST" action="/Manager/SearchCommentsByContent" style="padding:0px;margin:0px;display:inline-block">
-            <label style="vertical-align:top"> Find posts by text: </label>
+            <label style="vertical-align:top">By text: </label>
             <textarea style="height:30px;" id="commentContent" name="commentContent"></textarea>
-            <button type="submit">Search</button>
+            <button class="btn btn-success" type="submit">Search</button>
         </form>
     </div>
 </div>

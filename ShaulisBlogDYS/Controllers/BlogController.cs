@@ -42,5 +42,21 @@ namespace ShaulisBlogDYS.Controllers
             }
             return RedirectToAction("Index");
         }
+
+
+        [HttpPost]
+        public ActionResult AdvancedSearchPost(string titleSearchPost, string authorNameSearchPost, DateTime fromDateSearchPost, DateTime toDateSearchPost)
+        {
+            using (BlogDBContext context = new BlogDBContext())
+            {
+                List<Post> searchResult = context.Posts.Where(u => u.Author.Contains(authorNameSearchPost) && u.Title.Contains(titleSearchPost) && u.PostDate.CompareTo(fromDateSearchPost) >= 0 && u.PostDate.CompareTo(toDateSearchPost) <= 0).ToList<Post>();
+                for (var i = 0; i < searchResult.Count; i++)
+                {
+                    Post current = searchResult[i];
+                    current.Comments = context.Comments.Where(u => u.PostID == current.ID).ToList<Comment>();
+                }
+                return View("PostSearchResult", searchResult);
+            }
+        }
     }
 }

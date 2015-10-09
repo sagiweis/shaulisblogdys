@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width" />
     <title>Browser Page title</title>
     <link rel="stylesheet" href="/Content/11.css" type="text/css" media="screen" />
+    <link href="~/Content/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Content/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
-<body>
+<body style="margin: 0 auto">
     <!--Facebook javascript sdk intiallizing-->
     <div id="fb-root"></div>
     <script>
@@ -43,52 +45,46 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
         <img src="/Content/images/intro_shauli.png" alt="Shauli" />
     </section>
-    <div id="content">
-        <div id="mainContent">
-
-
-
-
-
-            @RenderBody()
-
-            @Scripts.Render("~/bundles/jquery")
-            @RenderSection("scripts", required: false)
+        <div id="content">
+            <div id="mainContent">
+                @RenderBody()
+                @Scripts.Render("~/bundles/jquery")
+                @RenderSection("scripts", required: false)
+            </div>
+            <aside>
+                <section>
+                    <header>
+                        <h3>Categories</h3>
+                    </header>
+                    <ul>
+                        <li><a href="#">Lorem ipsum dolor</a></li>
+                        <li><a href="#">Sit amet consectetur</a></li>
+                        <li><a href="#">Adipisicing elit sed</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <header>
+                        <h3>Archives</h3>
+                    </header>
+                    <ul>
+                        <li><a href="#">December 2008</a></li>
+                        <li><a href="#">January 2009</a></li>
+                        <li><a href="#">February 2009</a></li>
+                        <li><a href="#">March 2009</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <iframe frameborder="0" height="240" width="185" scrolling="no" src="http://ticker.mivzakim.net/ticker/filter/1445?visible=2&bgcolor=E9EAED&refresh=120"></iframe>
+                </section>
+                <section>
+                    <a class="twitter-timeline" href="https://twitter.com/colman_college" data-widget-id="652418412166123522">ציוצים מאת colman_college</a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                </section>
+                <section>
+                    <div class="fb-page" data-href="https://www.facebook.com/ShauliBlog" data-width="180" data-height="300" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/ShauliBlog"><a href="https://www.facebook.com/ShauliBlog">‏‎Shauli Blog‎‏</a></blockquote></div></div>
+                </section>
+            </aside>
         </div>
-        <aside>
-            <section>
-                <header>
-                    <h3>Categories</h3>
-                </header>
-                <ul>
-                    <li><a href="#">Lorem ipsum dolor</a></li>
-                    <li><a href="#">Sit amet consectetur</a></li>
-                    <li><a href="#">Adipisicing elit sed</a></li>
-                </ul>
-            </section>
-            <section>
-                <header>
-                    <h3>Archives</h3>
-                </header>
-                <ul>
-                    <li><a href="#">December 2008</a></li>
-                    <li><a href="#">January 2009</a></li>
-                    <li><a href="#">February 2009</a></li>
-                    <li><a href="#">March 2009</a></li>
-                </ul>
-            </section>
-            <section>
-                <iframe frameborder="0" height="240" width="185" scrolling="no" src="http://ticker.mivzakim.net/ticker/filter/1445?visible=2&bgcolor=E9EAED&refresh=120"></iframe>
-            </section>
-            <section>
-                <a class="twitter-timeline" href="https://twitter.com/colman_college" data-widget-id="652418412166123522">ציוצים מאת colman_college</a>
-                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-            </section>
-            <section>
-                <div class="fb-page" data-href="https://www.facebook.com/ShauliBlog" data-width="180" data-height="300" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/ShauliBlog"><a href="https://www.facebook.com/ShauliBlog">‏‎Shauli Blog‎‏</a></blockquote></div></div>
-            </section>
-        </aside>
-    </div>
     <footer>
         <!-- Footer -->
         <div>

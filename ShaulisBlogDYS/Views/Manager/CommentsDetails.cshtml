@@ -16,11 +16,11 @@
                     @this.Model[index].CommentText<br />
                     <form method="POST" action="/Manager/EditComment" style="padding:0px;margin:0px;display:inline-block">
                         <input type="hidden" name="id" value="@this.Model[index].ID" />
-                        <button type="submit">Edit</button>
+                        <button class="btn btn-primary" type="submit">Edit</button>
                     </form>
                     <form method="POST" action="/Manager/DeleteComment" style="padding:0px;margin:0px;display:inline-block">
                         <input type="hidden" name="id" value="@this.Model[index].ID" />
-                        <button type="submit">Delete</button>
+                        <button class="btn btn-danger" type="submit">Delete</button>
                     </form>
                 </li><br />
                 <hr /><br />

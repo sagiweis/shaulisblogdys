@@ -27,7 +27,7 @@ header, footer, section, aside, nav, article {
 }
 
 body {
-	margin: 0 auto;
+	margin: 0 auto !important;
 	padding: 22px 0;
 	width: 940px;
 	font: 13px/22px Helvetica, Arial, sans-serif;
@@ -102,7 +102,7 @@ nav {
 
 						nav ul li.subscribe a {
 			  height:30px;
-			  width:125px;
+			  width:200px;
 			  text-align:center;
 			  -webkit-transition: all 2s ease-in-out;
 			  -moz-transition: all 2s ease-in-out;

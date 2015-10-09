@@ -149,6 +149,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\11.css" />
+    <Content Include="Content\bootstrap-3.3.5-dist\css\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-3.3.5-dist\css\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap-3.3.5-dist\css\bootstrap.css" />
+    <Content Include="Content\bootstrap-3.3.5-dist\css\bootstrap.min.css" />
+    <Content Include="Content\bootstrap-3.3.5-dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\bootstrap-3.3.5-dist\js\bootstrap.js" />
+    <Content Include="Content\bootstrap-3.3.5-dist\js\bootstrap.min.js" />
+    <Content Include="Content\bootstrap-3.3.5-dist\js\npm.js" />
     <Content Include="Content\images\intro_shauli.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -206,6 +214,12 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\bootstrap-3.3.5-dist\css\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap-3.3.5-dist\css\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-3.3.5-dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-3.3.5-dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\bootstrap-3.3.5-dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\bootstrap-3.3.5-dist\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
@@ -246,6 +260,7 @@
     <Content Include="Views\Manager\PostSearchResult.cshtml" />
     <Content Include="Views\Manager\CommentsSearchResult.cshtml" />
     <Content Include="Views\FanClub\FanSearchResult.cshtml" />
+    <Content Include="Views\Blog\PostSearchResult.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
