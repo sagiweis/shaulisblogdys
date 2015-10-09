@@ -236,6 +236,10 @@
     <Content Include="Views\Manager\Details.cshtml" />
     <Content Include="Views\Manager\Edit.cshtml" />
     <Content Include="Views\Manager\Index.cshtml" />
+    <Content Include="Views\Manager\EditComment.cshtml" />
+    <Content Include="Views\Manager\PostSearchResult.cshtml" />
+    <Content Include="Views\Manager\CommentsSearchResult.cshtml" />
+    <Content Include="Views\FanClub\FanSearchResult.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

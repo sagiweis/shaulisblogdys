@@ -25,6 +25,26 @@ namespace ShaulisBlogDYS.Controllers
             }
         }
 
+        [HttpPost]
+        public ActionResult SearchFanByFirstName(string fanNameSearch)
+        {
+            using (BlogDBContext context = new BlogDBContext())
+            {
+                List<Fan> fans = context.Fans.Where(u => u.FirstName == fanNameSearch).ToList<Fan>();
+                return View("FanSearchResult", fans);
+            }
+        }
+
+        [HttpPost]
+        public ActionResult SearchFanByMinYears(int fanYearsSearch)
+        {
+            using (BlogDBContext context = new BlogDBContext())
+            {
+                List<Fan> fans = context.Fans.Where(u => u.TimeInClub >= fanYearsSearch).ToList<Fan>();
+                return View("FanSearchResult", fans);
+            }
+        }
+
         public ActionResult CreateNewFan()
         {
             return View();

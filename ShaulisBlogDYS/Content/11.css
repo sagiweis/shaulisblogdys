@@ -8,7 +8,7 @@
 }
 
 div {
-	font-family: myFirstFont;
+	font-family: Arial;
 }
 
 header>h1{
@@ -328,7 +328,7 @@ aside section {
 form {
 	margin-top: 21px;
 	padding-top: 22px;
-	border-top: 1px solid #d7d7d7;
+	
 }
 
 	form p {
@@ -414,3 +414,12 @@ footer {
 		footer ul li a {
 			display: block;
 		}
+
+
+/*------------------------------
+=Manager Panel
+------------------------------*/
+
+.managingPanel{
+    font-family:Arial;
+}

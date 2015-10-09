@@ -7,44 +7,55 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Fans list:</h2>
-<a href="/FanClub/CreateNewFan">Create new fan</a>
-<table style="width:100%;border:1px solid black">
-    <tr>
-        <th>First name</th>
-        <th>Last name</th>
-        <th>Gender</th>
-        <th>Date of birth</th>
-        <th>Years in the club</th>
-        <th>Actions</th>
-    </tr>
 
-    @for (int index = 0; index < this.Model.Length; index++)
-    {
+<div style="border:1px solid darkgray; border-radius:10px; padding:10px; margin-top:10px;">
+    <h3>Fans list</h3>
+    <a href="/FanClub/CreateNewFan">Create new fan</a>
+    <table style="width:100%;border:1px solid black">
         <tr>
-            <td><center>@this.Model[index].FirstName</center></td>
-            <td><center>@this.Model[index].LastName</center></td>
-            @if (this.Model[index].Gender == true)
-            {
-                <td><center>Male</center></td>
-            }
-            else
-            {
-                <td><center>Female</center></td>
-            }
-            <td><center>@this.Model[index].BirthDate</center></td>
-            <td><center>@this.Model[index].TimeInClub</center></td>
-            <td>
-                <form method="POST" action="/FanClub/EditFan" style="padding:0px;margin:0px;display:inline-block">
-                    <input type="hidden" name="id" value="@this.Model[index].ID" />
-                    <button type="submit">Edit</button>
-                </form>
-                <form method="POST" action="/FanClub/Delete" style="padding:0px;margin:0px;display:inline-block">
-                    <input type="hidden" name="id" value="@this.Model[index].ID" />
-                    <button type="submit">Delete</button>
-                </form>
-            </td>
-</tr>
-    }
-</table>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Gender</th>
+            <th>Date of birth</th>
+            <th>Years in the club</th>
+            <th>Actions</th>
+        </tr>
 
+        @for (int index = 0; index < this.Model.Length; index++)
+        {
+            <tr>
+                <td><center>@this.Model[index].FirstName</center></td>
+                <td><center>@this.Model[index].LastName</center></td>
+                @if (this.Model[index].Gender == true)
+                {
+                    <td><center>Male</center></td>
+                }
+                else
+                {
+                    <td><center>Female</center></td>
+                }
+                <td><center>@this.Model[index].BirthDate</center></td>
+                <td><center>@this.Model[index].TimeInClub</center></td>
+                <td>
+                    <form method="POST" action="/FanClub/EditFan" style="padding:0px;margin:0px;display:inline-block">
+                        <input type="hidden" name="id" value="@this.Model[index].ID" />
+                        <button type="submit">Edit</button>
+                    </form>
+                    <form method="POST" action="/FanClub/Delete" style="padding:0px;margin:0px;display:inline-block">
+                        <input type="hidden" name="id" value="@this.Model[index].ID" />
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </table>
+    <h3>Search Fans</h3>
+    <form method="POST" action="/FanClub/SearchFanByFirstName" style="padding:0px;margin:0px;display:inline-block">
+        <label>Search fans by first name: </label><input type="text" id="fanNameSearch" name="fanNameSearch">
+        <button type="submit">Search</button>
+    </form>
+    <form method="POST" action="/FanClub/SearchFanByMinYears" style="padding:0px;margin:0px;display:inline-block">
+        <label>Search fans by minimum years in the club: </label><input type="number" id="fanYearsSearch" name="fanYearsSearch">
+        <button type="submit">Search</button>
+    </form>
+    </div>

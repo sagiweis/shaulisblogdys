@@ -53,6 +53,15 @@ namespace ShaulisBlogDYS.Controllers
             }
         }
 
+        public ActionResult EditComment(int id)
+        {
+            using (BlogDBContext context = new BlogDBContext())
+            {
+                Comment currComment = context.Comments.Where(u => u.ID == id).FirstOrDefault<Comment>();
+                return View(currComment);
+            }
+        }
+
         public ActionResult Edit(int id)
         {
             using (BlogDBContext context = new BlogDBContext())
@@ -112,6 +121,58 @@ namespace ShaulisBlogDYS.Controllers
                 
                 Post newPost = new Post(author, title, siteurl, content, image, video);
                 context.Posts.Add(newPost);
+                context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+        }
+
+        [HttpPost]
+        public ActionResult SearchCommentsByAuthor(string authorNameSearchComment)
+        {
+            using (BlogDBContext context = new BlogDBContext())
+            {
+                List<Comment> comments = context.Comments.Where(u => u.Author == authorNameSearchComment).ToList<Comment>();
+                return View("CommentsSearchResult", comments);
+            }
+        }
+
+        [HttpPost]
+        public ActionResult SearchCommentsByContent(string commentContent)
+        {
+            using (BlogDBContext context = new BlogDBContext())
+            {
+                List<Comment> comments = context.Comments.Where(u => u.CommentText.Contains(commentContent) == true).ToList<Comment>();
+                return View("CommentsSearchResult", comments);
+            }
+        }
+
+        [HttpPost]
+        public ActionResult SearchPostByAuthor(string authorNameSearchPost)
+        {
+            using (BlogDBContext context = new BlogDBContext())
+            {
+                List<Post> posts = context.Posts.Where(u => u.Author == authorNameSearchPost).ToList<Post>();
+                return View("PostSearchResult", posts);
+            }
+        }
+
+        [HttpPost]
+        public ActionResult SearchPostByDate(DateTime fromDateSearchPost, DateTime toDateSearchPost)
+        {
+            using (BlogDBContext context = new BlogDBContext())
+            {
+                List<Post> posts = context.Posts.Where(u => u.PostDate.CompareTo(fromDateSearchPost) >= 0 && u.PostDate.CompareTo(toDateSearchPost) <= 0).ToList<Post>();
+                return View("PostSearchResult",posts);
+            }
+        }
+
+        [HttpPost]
+        public ActionResult UpdateComment(int id, string content)
+        {
+            using (BlogDBContext context = new BlogDBContext())
+            {
+                Comment toEdit = context.Comments.Where(u => u.ID == id).FirstOrDefault<Comment>();
+                toEdit.CommentText = content;
                 context.SaveChanges();
                 return RedirectToAction("Index");
             }
