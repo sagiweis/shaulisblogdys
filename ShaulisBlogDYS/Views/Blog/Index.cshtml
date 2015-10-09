@@ -24,27 +24,34 @@
             </video>
         }
 
-        
-            @if (this.Model[index].Comments != null)
-            {
-                <small>@this.Model[index].Comments.Count comments</small><br />
+        <span>
+            <div class="fb-share-button" data-href="http://localhost:3517/Blog/Index" data-layout="button_count"></div>
+            <a href="https://twitter.com/share" class="twitter-share-button" data-url="" data-text="הבלוג של שאולי" data-via="BlogShauli" data-hashtags="ShauliBlog">Tweet</a>
+            <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
+        </span>
+        <br />
+
+        @if (this.Model[index].Comments != null)
+        {
+            <small>@this.Model[index].Comments.Count comments</small><br />
                 <div class="commentsSection">
                     <ul style="padding:10px">
                         @for (int commentIndex = 0; commentIndex < this.Model[index].Comments.Count; commentIndex++)
-                                {
+                        {
                             <li>
                                 <h4>@this.Model[index].Comments[commentIndex].Title</h4>
                                 Author: <a href="@this.Model[index].Comments[commentIndex].AuthorSiteUrl">@this.Model[index].Comments[commentIndex].Author</a><br />
                                 @this.Model[index].Comments[commentIndex].CommentText<br /><br />
                             </li>
-                            <hr/><br />
-                                }
+                            <hr />
+                            <br />
+                        }
                     </ul>
                 </div>
         }
         else
         {
-        <small>no comments</small><br /><br />
+            <small>no comments</small><br /><br />
         }
         <div class="newComment">
             <h4>Add new comment</h4>

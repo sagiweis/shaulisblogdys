@@ -259,6 +259,12 @@ aside section {
 	-webkit-box-shadow: 3px 3px 7px #777;
 }
 
+.fb-share-button{
+    float:left;
+    width:105px;
+    margin-right: 10px;
+}
+
 /*------------------------------
 =COMMENTS
 ------------------------------*/

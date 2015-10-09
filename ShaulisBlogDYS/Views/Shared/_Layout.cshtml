@@ -9,6 +9,16 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
+    <!--Facebook javascript sdk intiallizing-->
+    <div id="fb-root"></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/he_IL/sdk.js#xfbml=1&version=v2.5";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
 
     <header>
         <h1>Ha-Blog Shel Shauli</h1>
@@ -66,6 +76,16 @@
                     <li><a href="#">February 2009</a></li>
                     <li><a href="#">March 2009</a></li>
                 </ul>
+            </section>
+            <section>
+                <iframe frameborder="0" height="240" width="185" scrolling="no" src="http://ticker.mivzakim.net/ticker/filter/1445?visible=2&bgcolor=E9EAED&refresh=120"></iframe>
+            </section>
+            <section>
+                <a class="twitter-timeline" href="https://twitter.com/colman_college" data-widget-id="652418412166123522">ציוצים מאת colman_college</a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+            </section>
+            <section>
+                <div class="fb-page" data-href="https://www.facebook.com/ShauliBlog" data-width="180" data-height="300" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/ShauliBlog"><a href="https://www.facebook.com/ShauliBlog">‏‎Shauli Blog‎‏</a></blockquote></div></div>
             </section>
         </aside>
     </div>
