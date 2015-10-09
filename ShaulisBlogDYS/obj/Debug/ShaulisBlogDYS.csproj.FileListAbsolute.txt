@@ -26,3 +26,37 @@ c:\users\sagi\documents\visual studio 2013\Projects\ShaulisBlogDYS\ShaulisBlogDY
 c:\users\sagi\documents\visual studio 2013\Projects\ShaulisBlogDYS\ShaulisBlogDYS\obj\Debug\ShaulisBlogDYS.csprojResolveAssemblyReference.cache
 c:\users\sagi\documents\visual studio 2013\Projects\ShaulisBlogDYS\ShaulisBlogDYS\obj\Debug\ShaulisBlogDYS.dll
 c:\users\sagi\documents\visual studio 2013\Projects\ShaulisBlogDYS\ShaulisBlogDYS\obj\Debug\ShaulisBlogDYS.pdb
+C:\Users\Dor Albagly\Documents\GitHubVisualStudio\shaulisblogdys\ShaulisBlogDYS\bin\ShaulisBlogDYS.dll.config
+C:\Users\Dor Albagly\Documents\GitHubVisualStudio\shaulisblogdys\ShaulisBlogDYS\bin\ShaulisBlogDYS.dll
+C:\Users\Dor Albagly\Documents\GitHubVisualStudio\shaulisblogdys\ShaulisBlogDYS\bin\ShaulisBlogDYS.pdb
+C:\Users\Dor Albagly\Documents\GitHubVisualStudio\shaulisblogdys\ShaulisBlogDYS\bin\Antlr3.Runtime.dll
+C:\Users\Dor Albagly\Documents\GitHubVisualStudio\shaulisblogdys\ShaulisBlogDYS\bin\EntityFramework.dll
+C:\Users\Dor Albagly\Documents\GitHubVisualStudio\shaulisblogdys\ShaulisBlogDYS\bin\EntityFramework.SqlServer.dll
+C:\Users\Dor Albagly\Documents\GitHubVisualStudio\shaulisblogdys\ShaulisBlogDYS\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Dor Albagly\Documents\GitHubVisualStudio\shaulisblogdys\ShaulisBlogDYS\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\Dor Albagly\Documents\GitHubVisualStudio\shaulisblogdys\ShaulisBlogDYS\bin\Newtonsoft.Json.dll
+C:\Users\Dor Albagly\Documents\GitHubVisualStudio\shaulisblogdys\ShaulisBlogDYS\bin\System.Net.Http.Formatting.dll
+C:\Users\Dor Albagly\Documents\GitHubVisualStudio\shaulisblogdys\ShaulisBlogDYS\bin\System.Web.Http.dll
+C:\Users\Dor Albagly\Documents\GitHubVisualStudio\shaulisblogdys\ShaulisBlogDYS\bin\System.Web.Http.WebHost.dll
+C:\Users\Dor Albagly\Documents\GitHubVisualStudio\shaulisblogdys\ShaulisBlogDYS\bin\System.Web.Mvc.dll
+C:\Users\Dor Albagly\Documents\GitHubVisualStudio\shaulisblogdys\ShaulisBlogDYS\bin\System.Web.Optimization.dll
+C:\Users\Dor Albagly\Documents\GitHubVisualStudio\shaulisblogdys\ShaulisBlogDYS\bin\System.Web.Providers.dll
+C:\Users\Dor Albagly\Documents\GitHubVisualStudio\shaulisblogdys\ShaulisBlogDYS\bin\System.Web.Razor.dll
+C:\Users\Dor Albagly\Documents\GitHubVisualStudio\shaulisblogdys\ShaulisBlogDYS\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Dor Albagly\Documents\GitHubVisualStudio\shaulisblogdys\ShaulisBlogDYS\bin\System.Web.WebPages.dll
+C:\Users\Dor Albagly\Documents\GitHubVisualStudio\shaulisblogdys\ShaulisBlogDYS\bin\System.Web.WebPages.Razor.dll
+C:\Users\Dor Albagly\Documents\GitHubVisualStudio\shaulisblogdys\ShaulisBlogDYS\bin\WebGrease.dll
+C:\Users\Dor Albagly\Documents\GitHubVisualStudio\shaulisblogdys\ShaulisBlogDYS\bin\EntityFramework.xml
+C:\Users\Dor Albagly\Documents\GitHubVisualStudio\shaulisblogdys\ShaulisBlogDYS\bin\EntityFramework.SqlServer.xml
+C:\Users\Dor Albagly\Documents\GitHubVisualStudio\shaulisblogdys\ShaulisBlogDYS\bin\Newtonsoft.Json.xml
+C:\Users\Dor Albagly\Documents\GitHubVisualStudio\shaulisblogdys\ShaulisBlogDYS\bin\System.Net.Http.Formatting.xml
+C:\Users\Dor Albagly\Documents\GitHubVisualStudio\shaulisblogdys\ShaulisBlogDYS\bin\System.Web.Http.xml
+C:\Users\Dor Albagly\Documents\GitHubVisualStudio\shaulisblogdys\ShaulisBlogDYS\bin\System.Web.Http.WebHost.xml
+C:\Users\Dor Albagly\Documents\GitHubVisualStudio\shaulisblogdys\ShaulisBlogDYS\bin\System.Web.Mvc.xml
+C:\Users\Dor Albagly\Documents\GitHubVisualStudio\shaulisblogdys\ShaulisBlogDYS\bin\System.Web.Razor.xml
+C:\Users\Dor Albagly\Documents\GitHubVisualStudio\shaulisblogdys\ShaulisBlogDYS\bin\System.Web.WebPages.xml
+C:\Users\Dor Albagly\Documents\GitHubVisualStudio\shaulisblogdys\ShaulisBlogDYS\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Dor Albagly\Documents\GitHubVisualStudio\shaulisblogdys\ShaulisBlogDYS\bin\System.Web.WebPages.Razor.xml
+C:\Users\Dor Albagly\Documents\GitHubVisualStudio\shaulisblogdys\ShaulisBlogDYS\obj\Debug\ShaulisBlogDYS.csprojResolveAssemblyReference.cache
+C:\Users\Dor Albagly\Documents\GitHubVisualStudio\shaulisblogdys\ShaulisBlogDYS\obj\Debug\ShaulisBlogDYS.dll
+C:\Users\Dor Albagly\Documents\GitHubVisualStudio\shaulisblogdys\ShaulisBlogDYS\obj\Debug\ShaulisBlogDYS.pdb
