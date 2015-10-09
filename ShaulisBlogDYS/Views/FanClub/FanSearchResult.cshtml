@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "AddPost";
+}
+
+@if (this.Model.Count > 0)
+{
+    <table style="width:100%;border:1px solid black">
+        <tr>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Gender</th>
+            <th>Date of birth</th>
+            <th>Years in the club</th>
+        </tr>
+
+        @for (int index = 0; index < this.Model.Count; index++)
+        {
+            <tr>
+                <td><center>@this.Model[index].FirstName</center></td>
+                <td><center>@this.Model[index].LastName</center></td>
+                @if (this.Model[index].Gender == true)
+                {
+                    <td><center>Male</center></td>
+                }
+                else
+                {
+                    <td><center>Female</center></td>
+                }
+                <td><center>@this.Model[index].BirthDate</center></td>
+                <td><center>@this.Model[index].TimeInClub</center></td>
+            </tr>
+        }
+    </table>
+}
+else
+{
+    <h4>Sorry, we found no fans that match your query.</h4>
+}

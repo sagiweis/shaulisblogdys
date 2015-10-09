@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "AddPost";
+}
+
+@if (this.Model.Count > 0)
+{
+
+        <div class="commentsSection">
+            <ul style="padding:10px">
+                @for (int commentIndex = 0; commentIndex < this.Model.Count; commentIndex++)
+                {
+                    <li>
+                        <h4>@this.Model[commentIndex].Title</h4>
+                        Author: <a href="@this.Model[commentIndex].AuthorSiteUrl">@this.Model[commentIndex].Author</a><br />
+                        @this.Model[commentIndex].CommentText<br /><br />
+                    </li>
+                    <hr />
+                    <br />
+                }
+            </ul>
+        </div>
+    
+
+}
+else
+{
+    <h4>Sorry, we found no comments that match your query.</h4>
+}

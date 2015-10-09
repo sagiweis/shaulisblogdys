@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "CommentsDetails";
+}
+
+<h3>Edit Comment</h3>
+<div style="border:1px solid darkgray; border-radius:10px;padding:10px">
+
+    @if (this.Model != null)
+    {
+        <form method="POST" action="/Manager/UpdateComment" style="padding:0px;margin:0px;display:inline-block">
+            <h4>@this.Model.Title</h4>
+            Author: <a href="@this.Model.AuthorSiteUrl">@this.Model.Author</a><br />
+            <textarea id="content" name="content">@this.Model.CommentText</textarea><br />
+            <input type="hidden" name="id" value="@this.Model.ID" />
+            <button type="submit">Update</button>
+        </form>
+    }
+    else
+    {
+        <label>There are no comments to this post.</label>
+    }
+
+</div>
