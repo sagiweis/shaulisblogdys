@@ -15,7 +15,9 @@
         <small>no comments</small><br /><br />
     }
         
-    @this.Model.Content<br />
+    <div class="blogPostContent">
+        @this.Model.Content
+    </div><br />
 
     @if (this.Model.Image != null)
     {
