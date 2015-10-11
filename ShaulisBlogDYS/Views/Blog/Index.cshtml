@@ -64,7 +64,7 @@
             </span>
             <br />
 
-            @if (this.Model[index].Comments != null)
+            @if (this.Model[index].Comments != null && this.Model[index].Comments.Count > 0)
             {
                 <small>@this.Model[index].Comments.Count comments</small><br />
                 <div class="commentsSection">
