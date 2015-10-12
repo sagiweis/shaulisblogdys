@@ -97,12 +97,11 @@ namespace ShaulisBlogDYS.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(string title, string author, string siteurl, string content, HttpPostedFileBase uploadedImage, HttpPostedFileBase uploadedVideo)
+        public ActionResult Create(string title, string author, string siteurl, string content, HttpPostedFileBase uploadedImage, string uploadedVideo)
         {
             using (BlogDBContext context = new BlogDBContext())
             {
                 byte[] image = null;
-                byte[] video = null;
                 MemoryStream target;
 
                 if (uploadedImage != null)
@@ -112,14 +111,7 @@ namespace ShaulisBlogDYS.Controllers
                     image = target.ToArray();
                 }
 
-                if (uploadedVideo != null)
-                {
-                    target = new MemoryStream();
-                    uploadedVideo.InputStream.CopyTo(target);
-                    video = target.ToArray();
-                }
-                
-                Post newPost = new Post(author, title, siteurl, content, image, video);
+                Post newPost = new Post(author, title, siteurl, content, image, uploadedVideo);
                 context.Posts.Add(newPost);
                 context.SaveChanges();
                 return RedirectToAction("Index");
@@ -189,12 +181,11 @@ namespace ShaulisBlogDYS.Controllers
         }
 
         [HttpPost]
-        public ActionResult Update(int id, string title, string author, string siteurl, string content, HttpPostedFileBase uploadedImage, HttpPostedFileBase uploadedVideo)
+        public ActionResult Update(int id, string title, string author, string siteurl, string content, HttpPostedFileBase uploadedImage, string uploadedVideo)
         {
             using (BlogDBContext context = new BlogDBContext())
             {
                 byte[] image = null;
-                byte[] video = null;
                 MemoryStream target;
 
                 if (uploadedImage != null)
@@ -204,14 +195,7 @@ namespace ShaulisBlogDYS.Controllers
                     image = target.ToArray();
                 }
 
-                if (uploadedVideo != null)
-                {
-                    target = new MemoryStream();
-                    uploadedVideo.InputStream.CopyTo(target);
-                    video = target.ToArray();
-                }
-
-                Post newPost = new Post(author, title, siteurl, content, image, video);
+                Post newPost = new Post(author, title, siteurl, content, image, uploadedVideo);
                 Post currPost = context.Posts.Where(u => u.ID == id).FirstOrDefault<Post>();
                 currPost.Author = newPost.Author;
                 currPost.Comments = newPost.Comments;

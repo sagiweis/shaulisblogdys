@@ -60,3 +60,6 @@ C:\Users\Dor Albagly\Documents\GitHubVisualStudio\shaulisblogdys\ShaulisBlogDYS\
 C:\Users\Dor Albagly\Documents\GitHubVisualStudio\shaulisblogdys\ShaulisBlogDYS\obj\Debug\ShaulisBlogDYS.csprojResolveAssemblyReference.cache
 C:\Users\Dor Albagly\Documents\GitHubVisualStudio\shaulisblogdys\ShaulisBlogDYS\obj\Debug\ShaulisBlogDYS.dll
 C:\Users\Dor Albagly\Documents\GitHubVisualStudio\shaulisblogdys\ShaulisBlogDYS\obj\Debug\ShaulisBlogDYS.pdb
+C:\Users\Sagi\Documents\Visual Studio 2013\Projects\ShaulisBlogDYS\ShaulisBlogDYS\obj\Debug\ShaulisBlogDYS.Migrations.InitialCreate.resources
+C:\Users\Sagi\Documents\Visual Studio 2013\Projects\ShaulisBlogDYS\ShaulisBlogDYS\obj\Debug\ShaulisBlogDYS.csproj.GenerateResource.Cache
+C:\Users\Sagi\Documents\Visual Studio 2013\Projects\ShaulisBlogDYS\ShaulisBlogDYS\obj\Debug\ShaulisBlogDYS.Migrations.VideoUrl.resources

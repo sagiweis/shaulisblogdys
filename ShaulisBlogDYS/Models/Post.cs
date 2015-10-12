@@ -16,10 +16,10 @@ namespace ShaulisBlogDYS.Models
         public DateTime PostDate { get; set; }
         public string Content { get; set; }
         public byte[] Image { get; set; }
-        public byte[] Video { get; set; }
+        public string Video { get; set; }
         public List<Comment> Comments { get; set; }
 
-        public Post(string Author, string Title, string SiteUrl, string Content, byte[] Image, byte[] Video)
+        public Post(string Author, string Title, string SiteUrl, string Content, byte[] Image, string Video)
         {
             this.ID = ID;
             this.Author = Author;

@@ -33,7 +33,7 @@
     </form>
 </div>
 
-    @for (int index = 0; index < this.Model.Length; index++)
+    @for (int index = this.Model.Length-1; index >= 0; index--)
     {
         <div class="blogPost">
             <h2>@this.Model[index].Title</h2>

@@ -24,7 +24,6 @@
     Content: <textarea id="content" name="content">@this.Model.Content</textarea><br />
     Image: <input type="checkbox" onchange="toggleImageUpload()" />
     <input type="file" id="uploadedImageId" name="uploadedImage" accept="image/*" disabled><br />
-    Video: <input type="checkbox" onchange="toggleVideoUpload()" />
-    <input type="file" id="uploadedVideoId" name="uploadedVideo" accept="video/*" disabled><br />
+    Video: <input type="text" id="uploadedVideoId" name="uploadedVideo">@this.Model.Video<br />
     <button class="btn btn-success" type="submit">Submit</button>
 </form>
