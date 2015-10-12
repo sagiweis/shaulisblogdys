@@ -6,6 +6,15 @@
     function verifyDelete() {
         return confirm('Are you sure you want to delete this post?');
     }
+
+    (function passwordForm() {
+        var username = prompt("Manager Username", "");
+        var pass = prompt("Manager Password", "");
+        if (username != "admin" || pass != "admin") {
+            window.stop();
+            window.location.href = "Blog";
+        }
+    })();
 </script>
 <div class="managingPanel">
     <h1>Managing Panel</h1>
