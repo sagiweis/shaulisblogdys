@@ -456,3 +456,14 @@ footer {
     font-family:Arial;
 }
 
+ #canvasSquare{
+    position: fixed;
+    z-index: -1;
+    padding: 0;
+    margin: auto;
+    display: block;
+    width: 50px;
+    height: 50px;
+    top: 0;
+    left: 0;
+}

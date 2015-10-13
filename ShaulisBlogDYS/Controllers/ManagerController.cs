@@ -23,7 +23,19 @@ namespace ShaulisBlogDYS.Controllers
                     Post currPost = posts[index];
                     posts[index].Comments = context.Comments.Where(u => u.PostID == currPost.ID).ToList<Comment>();
                 }
-                return View(posts);
+
+                Dictionary<string, int> statistics = context.Posts.GroupBy(x => new { x.PostDate.Year, x.PostDate.Month, x.PostDate.Day })
+                    .Select(g=>new {Key = g.Key, Count=g.Count()})
+                    .OrderBy(x=>x.Key.Year)
+                    .ThenBy(x=>x.Key.Month)
+                    .ThenBy(x=>x.Key.Day)
+                    .ToDictionary(p => (p.Key.Day.ToString() + "/" + p.Key.Month.ToString() + "/" + p.Key.Year.ToString()),h=>h.Count);
+
+                PostsStatistics model = new PostsStatistics();
+                model.Posts = posts;
+                model.Statistics = statistics;
+
+                return View(model);
             }
         }
 
@@ -177,6 +189,36 @@ namespace ShaulisBlogDYS.Controllers
                 toEdit.CommentText = content;
                 context.SaveChanges();
                 return RedirectToAction("Index");
+            }
+        }
+
+        [HttpPost]
+        public ActionResult SearchPostByCommentContainText(string commentText)
+        {
+            using (BlogDBContext context = new BlogDBContext())
+            {
+                List<Post> searchResult = context.Posts.Join(context.Comments, p => p.ID, c => c.PostID, (p, c) => new { Post = p, Comment = c }).Where(u => u.Comment.CommentText.Contains(commentText)).Select(x => x.Post).ToList<Post>();
+                for (var i = 0; i < searchResult.Count; i++)
+                {
+                    Post current = searchResult[i];
+                    current.Comments = context.Comments.Where(u => u.PostID == current.ID).ToList<Comment>();
+                }
+                return View("PostSearchResult", searchResult);
+            }
+        }
+
+        [HttpPost]
+        public ActionResult SearchPostByCommentAuthor(string authorName)
+        {
+            using (BlogDBContext context = new BlogDBContext())
+            {
+                List<Post> searchResult = context.Posts.Join(context.Comments, p => p.ID, c => c.PostID, (p, c) => new { Post = p, Comment = c}).Where(u=>u.Comment.Author == authorName).Select(x=>x.Post).ToList<Post>();
+                for (var i = 0; i < searchResult.Count; i++)
+                {
+                    Post current = searchResult[i];
+                    current.Comments = context.Comments.Where(u => u.PostID == current.ID).ToList<Comment>();
+                }
+                return View("PostSearchResult", searchResult);
             }
         }
 

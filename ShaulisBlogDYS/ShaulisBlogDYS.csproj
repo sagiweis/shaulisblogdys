@@ -154,6 +154,7 @@
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Fan.cs" />
     <Compile Include="Models\Post.cs" />
+    <Compile Include="Models\PostsStatistics.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

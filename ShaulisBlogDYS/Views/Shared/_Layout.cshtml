@@ -14,6 +14,23 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body style="margin: 0 auto">
+
+    <canvas class="bgCanvas" id="canvasSquare" width="500" height="500"></canvas>
+
+
+    <script type="text/javascript">
+        var canvas = document.getElementById("canvasSquare");
+        var context = canvas.getContext('2d');
+
+        context.arc(canvas.width / 2, canvas.height / 2, canvas.width / 2 - 2, 0, Math.PI * 2, false);
+        context.closePath();
+
+        var orangeGradient = context.createLinearGradient(canvas.width / 2, 0, canvas.width / 2, canvas.height);
+        orangeGradient.addColorStop(0, 'white');
+        orangeGradient.addColorStop(1, 'black');
+        context.fillStyle = orangeGradient;
+        context.fill();
+    </script>
     <!--Facebook javascript sdk intiallizing-->
     <div id="fb-root"></div>
     <script>

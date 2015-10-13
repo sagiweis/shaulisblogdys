@@ -27,31 +27,48 @@
                 <th>Author</th>
                 <th>Actions</th>
             </tr>
-            @for (int index = 0; index < this.Model.Length; index++)
+            @for (int index = 0; index < this.Model.Posts.Length; index++)
             {
                 <tr>
                     <td>
-                        @this.Model[index].Title
+                        @this.Model.Posts[index].Title
                     </td>
-                    <td>@this.Model[index].Author</td>
+                    <td>@this.Model.Posts[index].Author</td>
                     <td style="text-align:center">
                         <form method="POST" action="/Manager/Details" style="padding:0px;margin:0px;display:inline-block">
-                            <input type="hidden" name="id" value="@this.Model[index].ID" />
+                            <input type="hidden" name="id" value="@this.Model.Posts[index].ID" />
                             <button class="btn btn-primary" type="submit">Details</button>
                         </form>
                         <form method="POST" action="/Manager/CommentsDetails" style="padding:0px;margin:0px;display:inline-block">
-                            <input type="hidden" name="id" value="@this.Model[index].ID" />
+                            <input type="hidden" name="id" value="@this.Model.Posts[index].ID" />
                             <button class="btn btn-primary" type="submit">Comments</button>
                         </form>
                         <form method="POST" action="/Manager/Edit" style="padding:0px;margin:0px;display:inline-block">
-                            <input type="hidden" name="id" value="@this.Model[index].ID" />
+                            <input type="hidden" name="id" value="@this.Model.Posts[index].ID" />
                             <button class="btn btn-primary" type="submit">Edit</button>
                         </form>
                         <form method="POST" action="/Manager/Delete" onsubmit="return verifyDelete();" style="padding:0px;margin:0px;display:inline-block">
-                            <input type="hidden" name="id" value="@this.Model[index].ID" />
+                            <input type="hidden" name="id" value="@this.Model.Posts[index].ID" />
                             <button class="btn btn-danger" type="submit">Delete</button>
                         </form>
                     </td>
+                </tr>
+            }
+        </table>
+        <h3>Statistics</h3>
+        <table style="width:100%;border:1px solid black">
+            <tr>
+                <th>Date</th>
+                <th>Amount</th>
+            </tr>
+            @foreach (var line in this.Model.Statistics)
+            {
+                <tr>
+                    <td>
+                        @line.Key
+                    </td>
+                    <td>@line.Value</td>
+
                 </tr>
             }
         </table>
@@ -67,6 +84,17 @@
             <label> to </label>
             <input type="date" id="toDateSearchPost" name="toDateSearchPost" />
             <label> (not included) </label>
+            <button class="btn btn-success" type="submit">Search</button>
+        </form>
+        <label>-OR-</label><br />
+        <form method="POST" action="/Manager/SearchPostByCommentAuthor" style="padding:0px;margin:0px;display:inline-block">
+            <label> Find posts that have been commented by </label>
+            <input type="text" id="authorName" name="authorName" />
+            <button class="btn btn-success" type="submit">Search</button>
+        </form><label>-OR-</label>
+        <form method="POST" action="/Manager/SearchPostByCommentContainText" style="padding:0px;margin:0px;display:inline-block">
+            <label> Find posts that their comments contains text </label>
+            <input type="text" id="commentText" name="commentText" />
             <button class="btn btn-success" type="submit">Search</button>
         </form>
     </div>
