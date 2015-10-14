@@ -1,0 +1,65 @@
+﻿@for (int index = this.Model.Count - 1; index >= 0; index--)
+{
+    <div class="blogPost">
+        <h2>@this.Model[index].Title</h2>
+        <small>@this.Model[index].PostDate</small><br />
+        Author: <a href="@this.Model[index].SiteUrl">@this.Model[index].Author</a><br />
+
+        <div class="blogPostContent">
+            @this.Model[index].Content
+        </div>
+        <br />
+        @if (this.Model[index].Image != null)
+        {
+            <img src="data:image/png;base64,@Convert.ToBase64String(this.Model[index].Image)" /><br />
+        }
+
+        @if (this.Model[index].Video != null && this.Model[index].Video != "")
+        {
+            <video width="320" height="240" controls>
+                <source src="@this.Model[index].Video" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        }
+
+        <span>
+            <div class="fb-share-button" data-href="http://localhost:3517/Blog/Index" data-layout="button_count"></div>
+            <a href="https://twitter.com/share" class="twitter-share-button" data-url="" data-text="הבלוג של שאולי" data-via="BlogShauli" data-hashtags="ShauliBlog">Tweet</a>
+            <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
+        </span>
+        <br />
+
+        @if (this.Model[index].Comments != null && this.Model[index].Comments.Count > 0)
+        {
+            <small>@this.Model[index].Comments.Count comments</small><br />
+            <div class="commentsSection">
+                <ul style="padding:10px">
+                    @for (int commentIndex = 0; commentIndex < this.Model[index].Comments.Count; commentIndex++)
+                    {
+                        <li>
+                            <h4>@this.Model[index].Comments[commentIndex].Title</h4>
+                            Author: <a href="@this.Model[index].Comments[commentIndex].AuthorSiteUrl">@this.Model[index].Comments[commentIndex].Author</a><br />
+                            @this.Model[index].Comments[commentIndex].CommentText<br /><br />
+                        </li>
+                        <br />
+                    }
+                </ul>
+            </div>
+        }
+        else
+        {
+            <small>no comments</small><br /><br />
+        }
+        <div class="newComment">
+            <h4>Add new comment</h4>
+            <form method="POST" action="/Blog/AddComment" style="padding:0px;margin:0px;border:0px" enctype="multipart/form-data">
+                <input type="hidden" name="id" value="@this.Model[index].ID" />
+                <label>Title: </label><input class="form-control" type="text" id="title" name="title" /><br />
+                <label>Author: </label><input class="form-control" type="text" id="author" name="author" /><br />
+                <label>Author Website: </label><input class="form-control" type="text" id="siteurl" name="siteurl" /><br />
+                <label style="vertical-align:top">Content: </label><textarea id="content" name="content" style="margin-top:0px; display:inline-block; height:40px;"></textarea><br />
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+}

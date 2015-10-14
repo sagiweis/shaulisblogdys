@@ -4,8 +4,10 @@
 
 <script>
     function toggleImageUpload() {
-        var elem = document.getElementById("uploadedImageId");
-        elem.disabled = !elem.disabled;
+        if ($("#uploadedImageId").prop("disabled"))
+            $("#uploadedImageId").prop("disabled", false);
+        else
+            $("#uploadedImageId").prop("disabled", true);
     }
 </script>
 <div style="border:1px solid darkgray; border-radius:10px;padding:10px">

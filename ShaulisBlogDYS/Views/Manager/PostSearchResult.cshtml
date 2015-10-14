@@ -20,7 +20,7 @@
                 <img src="data:image/png;base64,@Convert.ToBase64String(this.Model[index].Image)" /><br />
             }
 
-            @if (this.Model[index].Video != null)
+            @if (this.Model[index].Video != null && this.Model[index].Video != "")
             {
                 <video width="320" height="240" controls>
                     <source src="@this.Model[index].Video" type="video/mp4">

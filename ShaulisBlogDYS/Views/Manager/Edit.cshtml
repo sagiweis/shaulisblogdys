@@ -4,14 +4,12 @@
 
 <script>
     function toggleImageUpload() {
-        var elem = document.getElementById("uploadedImageId");
-        elem.disabled = !elem.disabled;
+        if($("#uploadedImageId").prop("disabled"))
+            $("#uploadedImageId").prop("disabled", false);
+        else
+            $("#uploadedImageId").prop("disabled", true);
     }
 
-    function toggleVideoUpload() {
-        var elem = document.getElementById("uploadedVideoId");
-        elem.disabled = !elem.disabled;
-    }
 </script>
 
 <h2>Edit Post</h2>

@@ -20,8 +20,8 @@ namespace ShaulisBlogDYS.Controllers
         {
             using (BlogDBContext context = new BlogDBContext())
             {
-                Post[] posts = context.Posts.OrderBy(u => u.ID).ToArray<Post>();
-                for (int index = 0; index < posts.Length; index++)
+                List<Post> posts = context.Posts.OrderBy(u => u.ID).ToList<Post>();
+                for (int index = 0; index < posts.Count; index++)
                 {
                     Post currPost = posts[index];
                     posts[index].Comments = context.Comments.Where(u => u.PostID == currPost.ID).ToList<Comment>();
@@ -43,6 +43,21 @@ namespace ShaulisBlogDYS.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpPost]
+        public ActionResult GetAllPosts()
+        {
+            using (BlogDBContext context = new BlogDBContext())
+            {
+                List<Post> posts = context.Posts.OrderBy(u => u.ID).ToList<Post>();
+                for (int index = 0; index < posts.Count; index++)
+                {
+                    Post currPost = posts[index];
+                    posts[index].Comments = context.Comments.Where(u => u.PostID == currPost.ID).ToList<Comment>();
+                }
+                return PartialView("PostsListPartialView", posts);
+            }
+        }
+
 
         [HttpPost]
         public ActionResult AdvancedSearchPost(string titleSearchPost, string authorNameSearchPost, DateTime fromDateSearchPost, DateTime toDateSearchPost)
@@ -55,7 +70,7 @@ namespace ShaulisBlogDYS.Controllers
                     Post current = searchResult[i];
                     current.Comments = context.Comments.Where(u => u.PostID == current.ID).ToList<Comment>();
                 }
-                return View("PostSearchResult", searchResult);
+                return PartialView("PostsListPartialView", searchResult);
             }
         }
     }
