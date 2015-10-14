@@ -59,7 +59,6 @@ nav {
 	left: 0;
 	width: 100%;
 	background: linear-gradient(#333, #111);
-	/*background: url("images/nav_background.png");*/
 }
 
 	nav ul {
@@ -126,16 +125,13 @@ nav {
 	position: relative;
 	margin-top: 66px;
 	padding: 44px;
-	/*background: #467612 url("images/intro_background.png") repeat-x;*/
 	background: linear-gradient(#B2DB10, #477712);
 	
-	/* Background-size not implemented yet */
 	-webkit-background-size: 100%;
 	-o-background-size: 100%;
 	-khtml-background-size: 100%;
 
 	
-	/* Border-radius not implemented yet */
 	-moz-border-radius: 22px;
 	-webkit-border-radius: 22px;
 }
@@ -164,7 +160,6 @@ nav {
 		width: 653px;
 		height: 100%;
 	
-		/* Border-radius not implemented yet */
 		-moz-border-radius: 22px;
 		-webkit-border-radius: 22px;
 	}
@@ -189,7 +184,6 @@ nav {
 	aside {
 		display: table-cell;
 		width: 300px;
-				/*background: url("images/sidebar_background.png") top left;*/
 		background: linear-gradient(to left, white, lightgray);
 	}
 
@@ -200,10 +194,8 @@ nav {
 aside section {
 	margin: 22px 0 0 22px;
 	padding: 11px 22px;
-	/*background: url("images/sidebar_section_background.png") repeat-x;*/
 	background: linear-gradient(white, gray);
 	
-	/* Border-radius not implemented yet */
 	-moz-border-radius: 11px;
 	-webkit-border-radius: 11px;
 }
@@ -247,6 +239,7 @@ textarea{
 
 .blogTitle{
     transition: all 1s ease;
+    float:left;
 }
 
 .blogTitle:hover{
@@ -369,15 +362,6 @@ form {
 		padding: 0 22px;
 	}
 
-		/*form label {
-			display: table-cell;
-			width: 140px;
-			padding-right: 20px;
-			text-align: right;
-			font-weight: bold;
-			vertical-align: top;
-		}*/
-	
 		form input[type="text"], form input[type="email"], form input[type="url"] {
 			display: table-cell;
 			width: 300px;
@@ -454,16 +438,4 @@ footer {
 
 .managingPanel{
     font-family:Arial;
-}
-
- #canvasSquare{
-    position: fixed;
-    z-index: -1;
-    padding: 0;
-    margin: auto;
-    display: block;
-    width: 50px;
-    height: 50px;
-    top: 0;
-    left: 0;
 }
